@@ -1,25 +1,18 @@
 # Auto Stocker — Marketing site
 
-Public landing page for **Auto Stocker**: workshop inventory, sales flows, and PDF invoicing for managers and staff. The site is a small React app (TypeScript, Vite, Tailwind) with **English (`en-US`) and Spanish (`es-ES`)** copy via i18next.
+Public marketing site for **Auto Stocker**: workshop inventory, sales flows, and PDF invoicing for managers and staff. The site is a small React app (TypeScript, Vite, Tailwind) with **English (`en-US`) and Spanish (`es-ES`)** copy via i18next.
 
 ## How this repo relates to the backend
 
-The live API and hosting live in **auto-stocker-backend** (Deno Fresh + Supabase). That app **serves this marketing site at `/`**: it reads `static/landing/index.html` from disk and returns it for the root route (see `routes/index.tsx` there).
+The live API and hosting live in **auto-stocker-backend** (Deno Fresh + Supabase). That app **serves this site at `/`**: it reads `website/dist/index.html` from the git submodule checkout and returns it for the root route, and serves hashed assets from `website/dist` (see `routes/index.tsx` and `main.ts` there).
 
-To produce the files the backend expects, the backend repo includes a Vite project under `landing/` whose build:
-
-- sets `base: "/landing/"` so asset URLs work behind Fresh’s static file handler
-- writes output to `../static/landing`
-
-From the backend root:
+This repository is linked from the backend at `website/` (git submodule). Vite builds to `dist/` with `base: '/'`. From the **backend** repository root:
 
 ```bash
-deno task build:landing
+deno task build:website
 ```
 
-That runs `npm ci` and `npm run build` inside `landing/` and refreshes `static/landing/`. For a full production bundle (landing + API), use `deno task build:all`.
-
-If you develop **here** as the source of truth, keep this tree aligned with the backend’s `landing/` app (or copy the build output / subtree as your workflow requires), and **match** the backend’s [`landing/vite.config.ts`](../auto-stocker-backend/landing/vite.config.ts) for `base` and `outDir` when building artifacts that ship inside `auto-stocker-backend`. This repo’s default Vite config targets standalone dev with assets at `/` and output in `dist/`.
+That runs `npm ci` and `npm run build` inside `website/` and refreshes `website/dist`. For a full production bundle (site + API), use `deno task build:all`.
 
 ## Local development
 
@@ -52,4 +45,4 @@ Optional environment variables (Vite `VITE_*`) are documented in [`src/config/si
 
 ## i18n
 
-Locale JSON lives in [`src/locales/`](src/locales/). The backend’s embedded landing uses the same pattern; see [`../auto-stocker-backend/AGENTS.md`](../auto-stocker-backend/AGENTS.md) for notes on language detection and `?lng=` overrides.
+Locale JSON lives in [`src/locales/`](src/locales/). See [`../auto-stocker-backend/AGENTS.md`](../auto-stocker-backend/AGENTS.md) for notes on language detection and `?lng=` overrides.
