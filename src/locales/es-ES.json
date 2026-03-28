@@ -1,0 +1,122 @@
+{
+  "site": {
+    "name": "Auto Stocker",
+    "tagline": "Inventario de taller para responsables y equipo"
+  },
+  "a11y": {
+    "openMenu": "Abrir menú"
+  },
+  "lang": {
+    "en": "English",
+    "es": "Español",
+    "switchTo": "Idioma"
+  },
+  "nav": {
+    "positioning": "Producto",
+    "problems": "Problemas",
+    "capabilities": "Funciones",
+    "download": "Descargar",
+    "screenshots": "Capturas"
+  },
+  "hero": {
+    "headline": "Stock en el que confiar—en el taller y en el papel",
+    "sub": "Auto Stocker está pensado para talleres mecánicos. Los responsables ganan claridad; el equipo, un flujo rápido y guiado del estante a la factura.",
+    "rolesTitle": "Para quién es",
+    "roles": {
+      "managers": {
+        "title": "Responsables y titulares",
+        "text": "Ve qué tienes, qué se ha movido y dónde los recuentos se desvían—antes de que cueste dinero."
+      },
+      "staff": {
+        "title": "Personal del taller",
+        "text": "Cuenta stock, vende recambios y cobra con menos pasos y menos idas y venidas."
+      }
+    }
+  },
+  "problems": {
+    "title": "Problemas que resolvemos",
+    "items": {
+      "chaos": {
+        "title": "Caos de stock",
+        "description": "Piezas repartidas entre bahías, notas y hojas de cálculo—nadie ve la misma foto."
+      },
+      "mismatch": {
+        "title": "Recuento frente al sistema",
+        "description": "El inventario físico no coincide con el sistema y conciliar lleva demasiado tiempo."
+      },
+      "slow": {
+        "title": "Presupuestos y facturas lentos",
+        "description": "Los presupuestos y las facturas se frenan porque los datos están en sitios distintos o hay que volver a teclearlos."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Qué puedes hacer",
+    "extrasTitle": "También incluye",
+    "extras": {
+      "0": "Facturas proforma cuando necesitas un presupuesto en papel antes de cerrar la venta.",
+      "1": "Refacturación cuando cambian totales o detalles—sin empezar de cero."
+    },
+    "items": {
+      "inventories": {
+        "title": "Inventarios",
+        "text": "Haz recuentos estructurados y mantén el historial alineado con el taller."
+      },
+      "catalog": {
+        "title": "Catálogo de artículos",
+        "text": "Mantén los artículos del taller con códigos y datos coherentes."
+      },
+      "review": {
+        "title": "Revisión y diferencias",
+        "text": "Compara stock esperado y contado y resuelve discrepancias con seguridad."
+      },
+      "clients": {
+        "title": "Clientes",
+        "text": "Ten los datos de clientes listos para ventas y seguimiento."
+      },
+      "sell": {
+        "title": "Venta y cobro",
+        "text": "Registra ventas y pagos en un solo flujo."
+      },
+      "invoices": {
+        "title": "Ventas y facturas PDF",
+        "text": "Genera facturas PDF profesionales a partir de ventas cerradas."
+      }
+    }
+  },
+  "download": {
+    "title": "Descargar Auto Stocker",
+    "intro": "Elige tu plataforma. Cada botón descarga la última build desde GitHub Releases.",
+    "button": "Descargar",
+    "platforms": {
+      "windows": "Windows",
+      "windowsHint": "App de escritorio (.zip)",
+      "android": "Android",
+      "androidHint": "Paquete instalable (.apk)"
+    }
+  },
+  "screenshots": {
+    "title": "Capturas",
+    "intro": "Sustituye las imágenes de ejemplo en el build de marketing por capturas reales de la app.",
+    "demoHint": "Ver la app en acción",
+    "placeholder": "Vista {{view}} (ejemplo)",
+    "viewInventory": "inventario",
+    "viewSale": "venta",
+    "viewInvoice": "factura"
+  },
+  "cta": {
+    "install": "Descargar"
+  },
+  "legal": {
+    "privacyTitle": "Privacidad",
+    "privacyBody": "Este texto es un marcador de posición sobre cómo pretendemos tratar los datos. Sustitúyelo por tu política de privacidad real antes de producción. Normalmente: qué recoges, por qué, conservación, subencargados (p. ej. Supabase), derechos del usuario y contacto.",
+    "termsTitle": "Términos de uso",
+    "termsBody": "Este texto no es asesoramiento legal. Sustitúyelo por tus términos que cubran uso aceptable, responsabilidad y licencia del software Auto Stocker antes de producción."
+  },
+  "footer": {
+    "copyrightHolder": "Prometeo IT",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Términos"
+  }
+}

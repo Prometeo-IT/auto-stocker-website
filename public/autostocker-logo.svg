@@ -1,0 +1,82 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  width="512"
+  height="512"
+  fill="none"
+  aria-label="AutoStocker logo"
+>
+  <defs>
+    <mask
+      id="wheel-rim-holes"
+      maskUnits="userSpaceOnUse"
+      maskContentUnits="userSpaceOnUse"
+    >
+      <rect width="256" height="256" fill="white" />
+      <circle cx="57.813" cy="113.675" r="4" fill="black" />
+      <circle cx="64.194" cy="94.037" r="4" fill="black" />
+      <circle cx="76.331" cy="77.331" r="4" fill="black" />
+      <circle cx="93.037" cy="65.194" r="4" fill="black" />
+      <circle cx="112.675" cy="58.813" r="4" fill="black" />
+      <circle cx="133.325" cy="58.813" r="4" fill="black" />
+      <circle cx="152.963" cy="65.194" r="4" fill="black" />
+      <circle cx="169.669" cy="77.331" r="4" fill="black" />
+      <circle cx="181.806" cy="94.037" r="4" fill="black" />
+      <circle cx="188.187" cy="113.675" r="4" fill="black" />
+      <path
+        fill="black"
+        d="M 99.645 124 A 23.355 23.355 0 0 1 146.355 124 Z"
+      />
+    </mask>
+  </defs>
+  <g id="centered-logo" transform="translate(5, -13)">
+    <g id="box">
+    <polygon
+      fill="#A27E68"
+      points="118,224 198,224 198,124 118,124"
+    />
+    <polygon
+      fill="#D5AC86"
+      points="48,224 118,224 118,124 48,124"
+    />
+    <polygon fill="#A27E68" points="48,124 48,154 27.231,154" />
+    <polygon
+      fill="#D5AC86"
+      points="118,124 198,124 218.769,154 138.769,154"
+    />
+  </g>
+
+  <g id="green-tag">
+    <path
+      fill="#517476"
+      d="M 70 124 L 96 124 L 96 159 A 1 1 0 0 1 95 160 L 71 160 A 1 1 0 0 1 70 159 L 70 124 Z"
+    />
+    <path
+      fill="#6A9A9A"
+      d="M 74 132 L 92 132 A 1 1 0 0 1 93 133 L 93 137 A 1 1 0 0 1 92 138 L 74 138 A 1 1 0 0 1 73 137 L 73 133 A 1 1 0 0 1 74 132 Z"
+    />
+  </g>
+
+  <g id="bars">
+    <rect x="140" y="192" width="7" height="18" fill="#233242" />
+    <rect x="152.333" y="182" width="7" height="28" fill="#233242" />
+    <rect x="164.667" y="194" width="7" height="16" fill="#233242" />
+    <rect x="177" y="172" width="7" height="38" fill="#233242" />
+  </g>
+
+  <g id="wheel">
+    <path
+      fill="#233242"
+      mask="url(#wheel-rim-holes)"
+      d="M 57 124 A 66 66 0 0 1 189 124 Z"
+    />
+    <path
+      d="M 90.645 124 A 32.355 32.355 0 0 1 155.355 124"
+      stroke="#5C7A85"
+      stroke-width="6"
+      stroke-linecap="butt"
+      fill="none"
+    />
+  </g>
+  </g>
+</svg>

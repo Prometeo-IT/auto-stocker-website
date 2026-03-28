@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="t">
+  <title id="t">Screenshot placeholder</title>
+  <rect width="800" height="520" fill="#e8e7ea" rx="12"/>
+  <rect x="32" y="32" width="736" height="456" fill="#f4f3f6" rx="8" stroke="#d4d2d8" stroke-width="2"/>
+  <text x="400" y="268" text-anchor="middle" fill="#6b6375" font-family="system-ui,sans-serif" font-size="22">Replace with app screenshot</text>
+</svg>

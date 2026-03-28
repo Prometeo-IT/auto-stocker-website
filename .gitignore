@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment (keep .env.example if you add one)
+.env
+.env.local
+.env.*.local
+
+# Logs & debug
+*.log
+npm-debug.log*
+
+# Vite
+.vite
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage

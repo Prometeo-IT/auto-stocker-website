@@ -1,0 +1,122 @@
+{
+  "site": {
+    "name": "Auto Stocker",
+    "tagline": "Workshop inventory for managers and staff"
+  },
+  "a11y": {
+    "openMenu": "Open menu"
+  },
+  "lang": {
+    "en": "English",
+    "es": "Español",
+    "switchTo": "Language"
+  },
+  "nav": {
+    "positioning": "Product",
+    "problems": "Problems",
+    "capabilities": "Capabilities",
+    "download": "Download",
+    "screenshots": "Screenshots"
+  },
+  "hero": {
+    "headline": "Stock you can trust—in the workshop and on paper",
+    "sub": "Auto Stocker is built for auto workshops. Managers get clarity; staff get a fast, guided flow from shelf to invoice.",
+    "rolesTitle": "Who it is for",
+    "roles": {
+      "managers": {
+        "title": "Managers & owners",
+        "text": "See what you have, what moved, and where counts diverge—before they become costly mistakes."
+      },
+      "staff": {
+        "title": "Workshop staff",
+        "text": "Count stock, sell parts, and take payment with fewer steps and less back-and-forth."
+      }
+    }
+  },
+  "problems": {
+    "title": "Problems we solve",
+    "items": {
+      "chaos": {
+        "title": "Stock chaos",
+        "description": "Parts scattered across bays, notes, and spreadsheets—nobody sees the same picture."
+      },
+      "mismatch": {
+        "title": "Count vs system mismatch",
+        "description": "Physical inventory does not match the system, and reconciling takes too long."
+      },
+      "slow": {
+        "title": "Slow quoting and invoicing",
+        "description": "Quotes and invoices stall because data lives in different places or needs retyping."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "What you can do",
+    "extrasTitle": "Also supported",
+    "extras": {
+      "0": "Preliminary invoices when you need a quote on paper before closing the sale.",
+      "1": "Reinvoicing when totals or details change—without starting from scratch."
+    },
+    "items": {
+      "inventories": {
+        "title": "Inventories",
+        "text": "Run structured counts and keep history aligned with the floor."
+      },
+      "catalog": {
+        "title": "Item catalog",
+        "text": "Maintain workshop items with consistent codes and details."
+      },
+      "review": {
+        "title": "Review & differences",
+        "text": "Compare expected vs counted stock and resolve discrepancies with confidence."
+      },
+      "clients": {
+        "title": "Clients",
+        "text": "Keep customer records ready for sales and follow-up."
+      },
+      "sell": {
+        "title": "Sell & payment",
+        "text": "Record sales and payments in one flow."
+      },
+      "invoices": {
+        "title": "Sales & PDF invoices",
+        "text": "Generate professional PDF invoices from completed sales."
+      }
+    }
+  },
+  "download": {
+    "title": "Download Auto Stocker",
+    "intro": "Pick your platform. Each button downloads the latest build from GitHub Releases.",
+    "button": "Download",
+    "platforms": {
+      "windows": "Windows",
+      "windowsHint": "Desktop app (.zip)",
+      "android": "Android",
+      "androidHint": "Installable package (.apk)"
+    }
+  },
+  "screenshots": {
+    "title": "Screenshots",
+    "intro": "Replace placeholders in the marketing build with real app screenshots.",
+    "demoHint": "See the app in action",
+    "placeholder": "{{view}} view (placeholder)",
+    "viewInventory": "inventory",
+    "viewSale": "sale",
+    "viewInvoice": "invoice"
+  },
+  "cta": {
+    "install": "Download"
+  },
+  "legal": {
+    "privacyTitle": "Privacy",
+    "privacyBody": "This placeholder summarizes how we intend to handle data. Replace with your real privacy policy before production. Typically: what you collect, why, retention, subprocessors (e.g. Supabase), user rights, and contact.",
+    "termsTitle": "Terms of use",
+    "termsBody": "This placeholder is not legal advice. Replace with your terms covering acceptable use, liability, and software licensing for Auto Stocker before production."
+  },
+  "footer": {
+    "copyrightHolder": "Prometeo IT",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
