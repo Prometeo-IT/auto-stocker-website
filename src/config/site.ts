@@ -13,6 +13,8 @@ export const SITE = {
    * same origin (production with `deno task dev` / deployed Fresh).
    */
   downloadsBaseUrl,
+  /** Optional demo or walkthrough video URL. */
+  demoVideoUrl: env.VITE_DEMO_VIDEO_URL as string | undefined,
 } as const;
 
 export function downloadManifestUrl(): string {
