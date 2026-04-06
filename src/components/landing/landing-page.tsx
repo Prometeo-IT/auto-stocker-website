@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { SITE } from "@/config/site";
+import {
+  SITE,
+  downloadAssetHref,
+  downloadManifestUrl,
+} from "@/config/site";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -42,6 +46,7 @@ import { cn } from "@/lib/utils";
 import {
   Download,
   ExternalLink,
+  FileText,
   Globe,
   Menu,
   Monitor,
@@ -67,20 +72,47 @@ const CAPABILITY_KEYS = [
   "invoices",
 ] as const;
 
-const DOWNLOAD_PLATFORMS = [
-  {
-    key: "windows" as const,
-    href: SITE.downloads.windows,
-    filename: "auto-stocker-windows.zip",
-    icon: Monitor,
+/** Maps release asset filenames to i18n keys for title and hint. */
+const DOWNLOAD_ASSET_I18N: Record<
+  string,
+  { titleKey: string; hintKey: string }
+> = {
+  "auto-stocker-windows.zip": {
+    titleKey: "download.platforms.windows",
+    hintKey: "download.platforms.windowsHint",
   },
-  {
-    key: "android" as const,
-    href: SITE.downloads.android,
-    filename: "auto-stocker-android.apk",
-    icon: Smartphone,
+  "auto-stocker-android.apk": {
+    titleKey: "download.platforms.androidApk",
+    hintKey: "download.platforms.androidApkHint",
   },
-];
+  "auto-stocker-android.aab": {
+    titleKey: "download.platforms.androidAab",
+    hintKey: "download.platforms.androidAabHint",
+  },
+  "SHA256SUMS.txt": {
+    titleKey: "download.platforms.checksums",
+    hintKey: "download.platforms.checksumsHint",
+  },
+};
+
+interface AppReleaseManifestJson {
+  tag_name: string;
+  published_at: string | null;
+  assets: Array<{
+    id: string;
+    label: string;
+    filename: string;
+    href: string;
+  }>;
+}
+
+function iconForAssetFilename(filename: string) {
+  if (filename.includes("windows")) return Monitor;
+  if (filename.endsWith(".aab") || filename.endsWith(".apk")) {
+    return Smartphone;
+  }
+  return FileText;
+}
 
 const SCREENSHOT_KEYS = [
   { id: "inventory", viewKey: "screenshots.viewInventory" },
@@ -314,36 +346,85 @@ function CapabilitiesSection() {
 
 function DownloadSection() {
   const { t } = useTranslation();
+  const [manifest, setManifest] = useState<AppReleaseManifestJson | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setLoadError(false);
+    void fetch(downloadManifestUrl())
+      .then((res) => {
+        if (!res.ok) throw new Error("manifest");
+        return res.json() as Promise<AppReleaseManifestJson>;
+      })
+      .then((data) => {
+        if (!cancelled) setManifest(data);
+      })
+      .catch(() => {
+        if (!cancelled) setLoadError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section id="download" className="scroll-mt-20 py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("download.title")}
         </h2>
-        <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">{t("download.intro")}</p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {DOWNLOAD_PLATFORMS.map(({ key, href, filename, icon: Icon }) => (
-            <Card key={key} size="sm" className="flex flex-col">
-              <CardHeader className="flex-1">
-                <div className="mb-2 flex items-center gap-2">
-                  <Icon className="text-muted-foreground size-5 shrink-0" aria-hidden />
-                  <CardTitle className="text-lg">{t(`download.platforms.${key}`)}</CardTitle>
-                </div>
-                <CardDescription>{t(`download.platforms.${key}Hint`)}</CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <a
-                  href={href}
-                  download={filename}
-                  className={cn(buttonVariants({ size: "default" }), "inline-flex w-full justify-center sm:w-auto")}
-                >
-                  <Download />
-                  {t("download.button")}
-                </a>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <p className="text-muted-foreground mb-4 max-w-3xl leading-relaxed">{t("download.intro")}</p>
+        {manifest?.tag_name ? (
+          <p className="text-muted-foreground mb-8 text-sm font-medium">
+            {t("download.versionLine", { tag: manifest.tag_name })}
+          </p>
+        ) : null}
+        {loading ? (
+          <p className="text-muted-foreground mb-8 text-sm">{t("download.loading")}</p>
+        ) : loadError ? (
+          <p className="text-destructive mb-8 text-sm">{t("download.loadError")}</p>
+        ) : !manifest?.assets?.length ? (
+          <p className="text-muted-foreground mb-8 text-sm">{t("download.empty")}</p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {manifest.assets.map((asset) => {
+              const keys = DOWNLOAD_ASSET_I18N[asset.filename];
+              const Icon = iconForAssetFilename(asset.filename);
+              const title = keys ? t(keys.titleKey) : asset.label;
+              const hint = keys ? t(keys.hintKey) : asset.filename;
+              return (
+                <Card key={asset.id} size="sm" className="flex flex-col">
+                  <CardHeader className="flex-1">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Icon className="text-muted-foreground size-5 shrink-0" aria-hidden />
+                      <CardTitle className="text-lg">{title}</CardTitle>
+                    </div>
+                    <CardDescription>{hint}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <a
+                      href={downloadAssetHref(asset.href)}
+                      download={asset.filename}
+                      className={cn(
+                        buttonVariants({ size: "default" }),
+                        "inline-flex w-full justify-center sm:w-auto",
+                      )}
+                    >
+                      <Download />
+                      {t("download.button")}
+                    </a>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );
