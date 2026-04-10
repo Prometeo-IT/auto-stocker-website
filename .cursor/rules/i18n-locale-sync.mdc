@@ -1,0 +1,19 @@
+---
+description: Keep translation keys synchronized across supported locales
+alwaysApply: true
+---
+
+# Translation Sync Rule
+
+When editing translation strings, keep all supported locale files in sync in the same change.
+
+- Supported locales currently include `src/locales/en-US.json` and `src/locales/es-ES.json`.
+- If a key is added, renamed, moved, or removed in one locale, apply the same structural change to all supported locales.
+- If a value is updated in one locale, update the corresponding value in every supported locale before finishing.
+- Do not leave temporary missing keys, stale keys, or placeholder values in one locale only.
+
+Before completing translation-related work, verify:
+
+1. Key paths match across all locale files.
+2. Changed keys were updated in each supported locale.
+3. JSON remains valid in each locale file.

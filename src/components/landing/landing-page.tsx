@@ -41,7 +41,6 @@ import {
 import { cn } from "@/lib/utils";
 import {
   Download,
-  ExternalLink,
   Globe,
   Menu,
   Monitor,
@@ -51,7 +50,6 @@ import {
 const NAV_IDS = [
   { id: "problems", key: "nav.problems" },
   { id: "capabilities", key: "nav.capabilities" },
-  { id: "screenshots", key: "nav.screenshots" },
 ] as const;
 
 const PROBLEM_KEYS = ["chaos", "mismatch", "slow"] as const;
@@ -80,11 +78,20 @@ const DOWNLOAD_PLATFORMS = [
   },
 ];
 
-const SCREENSHOT_KEYS = [
-  { id: "inventory", viewKey: "screenshots.viewInventory" },
-  { id: "sale", viewKey: "screenshots.viewSale" },
-  { id: "invoice", viewKey: "screenshots.viewInvoice" },
+const APP_SCREENSHOTS = [
+  { id: "inventory", captionKey: "screenshots.captions.inventory", altKey: "screenshots.alts.inventory" },
+  { id: "sales", captionKey: "screenshots.captions.sales", altKey: "screenshots.alts.sales" },
+  { id: "invoice", captionKey: "screenshots.captions.invoice", altKey: "screenshots.alts.invoice" },
+  { id: "dashboard", captionKey: "screenshots.captions.dashboard", altKey: "screenshots.alts.dashboard" },
+  {
+    id: "dashboard-phone",
+    captionKey: "screenshots.captions.dashboardPhone",
+    altKey: "screenshots.alts.dashboardPhone",
+  },
+  { id: "low-stock", captionKey: "screenshots.captions.lowStock", altKey: "screenshots.alts.lowStock" },
 ] as const;
+
+const FEATURED_SCREENSHOT_IDS = ["dashboard", "inventory", "sales", "dashboard-phone"] as const;
 
 const base = import.meta.env.BASE_URL;
 
@@ -223,16 +230,112 @@ function HeroSection() {
       className="scroll-mt-20 border-b bg-gradient-to-b from-muted/40 to-background py-16 md:py-24"
     >
       <div className="mx-auto max-w-5xl px-4">
-        <p className="text-primary mb-3 text-sm font-medium tracking-wide uppercase">
-          {t("site.tagline")}
-        </p>
-        <h1 className="font-heading text-foreground mb-6 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+        <h1 className="font-heading text-foreground mb-5 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
           {t("hero.headline")}
         </h1>
-        <p className="text-muted-foreground mb-10 max-w-2xl text-lg leading-relaxed">
+        <p className="text-primary mb-4 text-sm font-medium tracking-wide uppercase">
+          {t("site.tagline")}
+        </p>
+        <p className="text-muted-foreground mb-8 max-w-2xl text-lg leading-relaxed">
           {t("hero.sub")}
         </p>
-        <h2 className="font-heading text-foreground mb-4 text-lg font-medium">{t("hero.rolesTitle")}</h2>
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <a
+            href="#download"
+            className={cn(buttonVariants({ size: "lg" }), "inline-flex font-bold")}
+          >
+            <Download strokeWidth={2.5} />
+            {t("cta.get")}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ScreenshotsSection() {
+  const { t } = useTranslation();
+  return (
+    <section id="screenshots" className="scroll-mt-20 border-b bg-muted/20 py-14 md:py-18">
+      <div className="mx-auto max-w-5xl px-4">
+        <h2 className="font-heading text-foreground mb-3 text-2xl font-semibold tracking-tight md:text-3xl">
+          {t("screenshots.title")}
+        </h2>
+        <p className="text-muted-foreground mb-8 max-w-2xl leading-relaxed">{t("multiplatform.description")}</p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURED_SCREENSHOT_IDS.map((screenshotId) => {
+            const screenshot = APP_SCREENSHOTS.find((item) => item.id === screenshotId);
+            if (!screenshot) {
+              return null;
+            }
+            const isPhoneMockup = screenshot.id === "dashboard-phone";
+            const screenshotSrc = isPhoneMockup
+              ? `${base}screenshots/phone/dashboard.png`
+              : `${base}screenshots/desktop/${screenshot.id}.png`;
+            return (
+              <Dialog key={screenshot.id}>
+                <DialogTrigger className="block w-full text-left">
+                  {isPhoneMockup ? (
+                    <div className="mx-auto w-full max-w-[200px]">
+                      <div className="relative rounded-[2rem] border border-border/70 bg-card shadow-sm">
+                        <div
+                          className="pointer-events-none absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-foreground/20"
+                          aria-hidden
+                        />
+                        <img
+                          src={screenshotSrc}
+                          width={1170}
+                          height={1992}
+                          alt={t(screenshot.altKey)}
+                          loading="lazy"
+                          className="mx-auto aspect-[9/18] w-[100%] rounded-[1.5rem] object-contain"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <Card className="overflow-hidden p-0 transition-transform hover:-translate-y-0.5" size="sm">
+                      <img
+                        src={screenshotSrc}
+                        width={1920}
+                        height={1080}
+                        alt={t(screenshot.altKey)}
+                        loading="lazy"
+                        className="aspect-[16/9] w-full object-cover"
+                      />
+                    </Card>
+                  )}
+                  <p className="text-muted-foreground mt-2 text-center text-xs font-medium">
+                    {t(screenshot.captionKey)}
+                  </p>
+                </DialogTrigger>
+                <DialogContent className={cn(isPhoneMockup ? "sm:max-w-md" : "sm:max-w-5xl")}>
+                  <DialogHeader className="sr-only">
+                    <DialogTitle>{t(screenshot.captionKey)}</DialogTitle>
+                    <DialogDescription>{t(screenshot.altKey)}</DialogDescription>
+                  </DialogHeader>
+                  <img
+                    src={screenshotSrc}
+                    width={isPhoneMockup ? 1170 : 1920}
+                    height={isPhoneMockup ? 1992 : 1080}
+                    alt={t(screenshot.altKey)}
+                    className="max-h-[80vh] w-full rounded-md object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RolesSection() {
+  const { t } = useTranslation();
+  return (
+    <section className="scroll-mt-20 py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-4">
+        <h2 className="font-heading text-foreground mb-5 text-lg font-medium">{t("hero.rolesTitle")}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <Card size="sm">
             <CardHeader>
@@ -313,7 +416,7 @@ function CapabilitiesSection() {
 function DownloadSection() {
   const { t } = useTranslation();
   return (
-    <section id="download" className="scroll-mt-20 py-16 md:py-20">
+    <section id="download" className="scroll-mt-20 bg-muted/20 py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("download.title")}
@@ -342,53 +445,6 @@ function DownloadSection() {
             </Card>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function ScreenshotsSection() {
-  const { t } = useTranslation();
-  return (
-    <section id="screenshots" className="scroll-mt-20 border-y bg-muted/20 py-16 md:py-20">
-      <div className="mx-auto max-w-5xl px-4">
-        <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
-          {t("screenshots.title")}
-        </h2>
-        <p className="text-muted-foreground mb-8 max-w-2xl text-sm leading-relaxed">
-          {t("screenshots.intro")}
-        </p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {SCREENSHOT_KEYS.map(({ id, viewKey }) => (
-            <Card key={id} className="overflow-hidden p-0" size="sm">
-              <img
-                src={`${base}screenshots/placeholder.svg`}
-                width={800}
-                height={520}
-                alt=""
-                className="aspect-[800/520] w-full object-cover"
-              />
-              <CardContent className="pt-4">
-                <p className="text-muted-foreground text-xs">
-                  {t("screenshots.placeholder", { view: t(viewKey) })}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        {SITE.demoVideoUrl ? (
-          <p className="mt-8">
-            <a
-              href={SITE.demoVideoUrl}
-              className={cn(buttonVariants({ variant: "outline", size: "default" }), "inline-flex")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ExternalLink />
-              {t("screenshots.demoHint")}
-            </a>
-          </p>
-        ) : null}
       </div>
     </section>
   );
@@ -448,9 +504,10 @@ export function LandingPage() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <ScreenshotsSection />
+        <RolesSection />
         <ProblemsSection />
         <CapabilitiesSection />
-        <ScreenshotsSection />
         <DownloadSection />
       </main>
       <SiteFooter />

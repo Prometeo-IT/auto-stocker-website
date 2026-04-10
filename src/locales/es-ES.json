@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Auto Stocker",
-    "tagline": "Inventario de taller para responsables y equipo"
+    "tagline": "Software de inventario para talleres mecánicos"
   },
   "a11y": {
     "openMenu": "Abrir menú"
@@ -19,8 +19,8 @@
     "screenshots": "Capturas"
   },
   "hero": {
-    "headline": "Stock en el que confiar—en el taller y en el papel",
-    "sub": "Auto Stocker está pensado para talleres mecánicos. Los responsables ganan claridad; el equipo, un flujo rápido y guiado del estante a la factura.",
+    "headline": "Stock bajo control, operaciones más rápidas",
+    "sub": "Mantén el inventario al día, agiliza el paso del estante a la factura y evita desajustes costosos.",
     "rolesTitle": "Para quién es",
     "roles": {
       "managers": {
@@ -95,16 +95,34 @@
       "androidHint": "Paquete instalable (.apk)"
     }
   },
+  "multiplatform": {
+    "title": "Pensado para escritorio y móvil",
+    "description": "Usa Auto Stocker en escritorio para la operativa diaria y mantén visibilidad desde el móvil cuando estés fuera del mostrador."
+  },
   "screenshots": {
     "title": "Capturas",
     "intro": "Sustituye las imágenes de ejemplo en el build de marketing por capturas reales de la app.",
     "demoHint": "Ver la app en acción",
-    "placeholder": "Vista {{view}} (ejemplo)",
-    "viewInventory": "inventario",
-    "viewSale": "venta",
-    "viewInvoice": "factura"
+    "captions": {
+      "inventory": "Mantén el inventario preciso de un vistazo.",
+      "sales": "Busca y gestiona ventas en menos pasos.",
+      "invoice": "Revisa y emite facturas profesionales rápidamente.",
+      "dashboard": "Sigue el rendimiento del taller en un solo panel.",
+      "dashboardPhone": "Revisa métricas del panel desde el móvil.",
+      "lowStock": "Detecta faltantes antes de frenar el trabajo."
+    },
+    "alts": {
+      "inventory": "Pantalla de inventario de Auto Stocker",
+      "sales": "Listado de ventas de Auto Stocker",
+      "invoice": "Detalle de factura de Auto Stocker",
+      "dashboard": "Panel de Auto Stocker",
+      "dashboardPhone": "Panel de Auto Stocker en una pantalla de móvil",
+      "lowStock": "Alertas de stock bajo de Auto Stocker en un teléfono"
+    }
   },
   "cta": {
+    "get": "Obtener Auto Stocker",
+    "watchDemo": "Ver demo",
     "install": "Descargar"
   },
   "legal": {
