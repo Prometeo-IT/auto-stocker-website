@@ -27,18 +27,18 @@ export function CapabilitiesSection() {
         <h2 className="font-heading text-foreground mb-8 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("capabilities.title")}
         </h2>
-        <h3 className="font-heading text-foreground mb-5 text-lg font-medium">{t("hero.rolesTitle")}</h3>
+        <h3 className="font-heading text-foreground mb-5 text-lg font-medium">{t("capabilities.rolesTitle")}</h3>
         <div className="mb-10 grid gap-4 md:grid-cols-2">
           <Card size="sm">
             <CardHeader>
-              <CardTitle>{t("hero.roles.managers.title")}</CardTitle>
-              <CardDescription>{t("hero.roles.managers.text")}</CardDescription>
+              <CardTitle>{t("capabilities.roles.managers.title")}</CardTitle>
+              <CardDescription>{t("capabilities.roles.managers.text")}</CardDescription>
             </CardHeader>
           </Card>
           <Card size="sm">
             <CardHeader>
-              <CardTitle>{t("hero.roles.staff.title")}</CardTitle>
-              <CardDescription>{t("hero.roles.staff.text")}</CardDescription>
+              <CardTitle>{t("capabilities.roles.staff.title")}</CardTitle>
+              <CardDescription>{t("capabilities.roles.staff.text")}</CardDescription>
             </CardHeader>
           </Card>
         </div>

@@ -13,14 +13,39 @@
   },
   "nav": {
     "positioning": "Producto",
-    "problems": "Problemas",
+    "solutions": "Soluciones",
     "capabilities": "Funciones",
     "download": "Descargar",
     "screenshots": "Vista previa"
   },
   "hero": {
     "headline": "Stock bajo control, operaciones más rápidas",
-    "sub": "Mantén el inventario al día, agiliza el paso del estante a la factura y evita desajustes costosos.",
+    "sub": "Mantén el inventario al día, agiliza el paso del almacén a la factura y evita sorpresas."
+  },
+  "solutions": {
+    "title": "Del caos a la claridad",
+    "sub": "Cuando piezas, recuentos y precios están en sitios distintos, los errores se acumulan. Esta es la fricción que quitamos—para que el taller dependa en una sola vista del inventario y un camino más fluido del estante a la factura.",
+    "items": {
+      "inventoryScattered": {
+        "title": "Inventario en mil sitios",
+        "description": "Lo que hay en el almacén, en papel y en el ordenador rara vez coincide."
+      },
+      "unclearAvailability": {
+        "title": "“¿Lo tenemos?” sin respuesta clara",
+        "description": "Los pequeños desajustes entre el almacén y el mostrador acaban en promesas que no se cumplen y ventas lentas."
+      },
+      "duplicatePartListings": {
+        "title": "La misma pieza con cinco nombres",
+        "description": "Referencias duplicadas y códigos inconsistentes ralentizan cada búsqueda y facilitan errores en caja."
+      },
+      "unloggedMovement": {
+        "title": "Piezas que desaparecen sin dejar rastro",
+        "description": "El personal retira material, se acumulan devoluciones o los ajustes no se registran."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Qué puedes hacer",
     "rolesTitle": "Para quién es",
     "roles": {
       "managers": {
@@ -31,27 +56,7 @@
         "title": "Personal del taller",
         "text": "Cuenta stock, vende recambios y cobra con menos pasos y menos idas y venidas."
       }
-    }
-  },
-  "problems": {
-    "title": "Problemas que resolvemos",
-    "items": {
-      "chaos": {
-        "title": "Caos de stock",
-        "description": "Piezas repartidas entre bahías, notas y hojas de cálculo—nadie ve la misma foto."
-      },
-      "mismatch": {
-        "title": "Recuento frente al sistema",
-        "description": "El inventario físico no coincide con el sistema y conciliar lleva demasiado tiempo."
-      },
-      "slow": {
-        "title": "Presupuestos y facturas lentos",
-        "description": "Los presupuestos y las facturas se frenan porque los datos están en sitios distintos o hay que volver a teclearlos."
-      }
-    }
-  },
-  "capabilities": {
-    "title": "Qué puedes hacer",
+    },
     "extrasTitle": "También incluye",
     "extras": {
       "0": "Facturas proforma cuando necesitas un presupuesto en papel antes de cerrar la venta.",

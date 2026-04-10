@@ -13,14 +13,39 @@
   },
   "nav": {
     "positioning": "Product",
-    "problems": "Problems",
+    "solutions": "Solutions",
     "capabilities": "Capabilities",
     "download": "Download",
     "screenshots": "Preview"
   },
   "hero": {
     "headline": "Reliable stock, faster operations",
-    "sub": "Keep inventory up to date, streamline the shelf to invoice process, and avoid costly mismatches.",
+    "sub": "Keep inventory up to date, streamline the warehouse to invoice process, and avoid surprises."
+  },
+  "solutions": {
+    "title": "From chaos to clarity",
+    "sub": "When parts, counts, and pricing live in different places, small errors compound. Here is the day-to-day friction we remove—so your workshop can rely on a single view of inventory and a smoother path from shelf to invoice.",
+    "items": {
+      "inventoryScattered": {
+        "title": "Inventory scattered everywhere",
+        "description": "What is on the warehouse, what is on paper, and what is on the computer rarely line up."
+      },
+      "unclearAvailability": {
+        "title": "“Do we have it?” with no clear answer",
+        "description": "Small gaps between the warehouse and the desk turn into wrong promises and slow sales."
+      },
+      "duplicatePartListings": {
+        "title": "Same part, five different names",
+        "description": "Duplicate listings and inconsistent codes slow every search and make mistakes at checkout more likely."
+      },
+      "unloggedMovement": {
+        "title": "Parts disappear without a trail",
+        "description": "Technicians pull stock, returns pile up, or small adjustments never get logged."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "What you can do",
     "rolesTitle": "Who it is for",
     "roles": {
       "managers": {
@@ -31,27 +56,7 @@
         "title": "Workshop staff",
         "text": "Count stock, sell parts, and take payment with fewer steps and less back-and-forth."
       }
-    }
-  },
-  "problems": {
-    "title": "Problems we solve",
-    "items": {
-      "chaos": {
-        "title": "Stock chaos",
-        "description": "Parts scattered across bays, notes, and spreadsheets—nobody sees the same picture."
-      },
-      "mismatch": {
-        "title": "Count vs system mismatch",
-        "description": "Physical inventory does not match the system, and reconciling takes too long."
-      },
-      "slow": {
-        "title": "Slow quoting and invoicing",
-        "description": "Quotes and invoices stall because data lives in different places or needs retyping."
-      }
-    }
-  },
-  "capabilities": {
-    "title": "What you can do",
+    },
     "extrasTitle": "Also supported",
     "extras": {
       "0": "Preliminary invoices when you need a quote on paper before closing the sale.",

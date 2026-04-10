@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_IDS = [
   { id: "screenshots", key: "nav.screenshots" },
-  { id: "problems", key: "nav.problems" },
+  { id: "solutions", key: "nav.solutions" },
   { id: "capabilities", key: "nav.capabilities" },
 ] as const;
 
