@@ -85,7 +85,7 @@
   },
   "download": {
     "title": "Descargar Auto Stocker",
-    "intro": "Elige tu plataforma. Un clic por fila descarga la última versión para esa plataforma (servida desde este sitio).",
+    "intro": "Disponible para Windows y Android.",
     "button": "Descargar",
     "versionLine": "Última versión: {{tag}}",
     "loading": "Cargando descargas…",
@@ -94,7 +94,7 @@
     "platforms": {
       "windows": "Windows",
       "windowsHint": "App de escritorio (.zip)",
-      "androidApk": "Android (APK)",
+      "androidApk": "Android",
       "androidApkHint": "Paquete instalable (.apk)"
     }
   },
