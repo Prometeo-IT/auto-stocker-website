@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Download, Monitor, Smartphone } from "lucide-react";
 
 import {
-  downloadAssetHref,
-  downloadManifestUrl,
+  DOWNLOAD_MANIFEST_PATH,
+  downloadLatestAssetPath,
 } from "@/config/site";
 import { buttonVariants } from "@/components/ui/Button";
 import {
@@ -38,6 +38,7 @@ type DownloadPlatform = {
 
 type AppReleaseManifestAsset = {
   name?: string;
+  filename?: string;
   href?: string;
   url?: string;
   downloadUrl?: string;
@@ -46,6 +47,7 @@ type AppReleaseManifestAsset = {
 
 type AppReleaseManifestJson = {
   tag?: string;
+  tag_name?: string;
   assets?: AppReleaseManifestAsset[];
   files?: AppReleaseManifestAsset[];
 };
@@ -65,7 +67,7 @@ export function DownloadSection() {
     let cancelled = false;
     setLoading(true);
     setLoadError(false);
-    void fetch(downloadManifestUrl())
+    void fetch(DOWNLOAD_MANIFEST_PATH)
       .then((res) => {
         if (!res.ok) throw new Error("manifest");
         return res.json() as Promise<AppReleaseManifestJson>;
@@ -85,6 +87,7 @@ export function DownloadSection() {
   }, []);
 
   const assets = manifest?.assets ?? manifest?.files ?? [];
+  const releaseTag = manifest?.tag_name ?? manifest?.tag;
 
   return (
     <section
@@ -95,8 +98,8 @@ export function DownloadSection() {
         <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("download.title")}
         </h2>
-        {manifest?.tag ? (
-          <p className="text-muted-foreground mb-1 text-sm">{t("download.versionLine", { tag: manifest.tag })}</p>
+        {releaseTag ? (
+          <p className="text-muted-foreground mb-1 text-sm">{t("download.versionLine", { tag: releaseTag })}</p>
         ) : null}
         <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">{t("download.intro")}</p>
         {loading ? <p className="text-muted-foreground mb-4 text-sm">{t("download.loading")}</p> : null}
@@ -104,13 +107,15 @@ export function DownloadSection() {
         <div className="grid gap-4 sm:grid-cols-2">
           {DOWNLOAD_PLATFORMS.map(({ key, filename, icon: Icon }) => {
             const i18nKeys = DOWNLOAD_ASSET_I18N[key];
-            const matched = assets.find((asset) => asset.name === filename);
+            const matched = assets.find(
+              (asset) => (asset.filename ?? asset.name) === filename,
+            );
             const href =
               matched?.href ??
               matched?.downloadUrl ??
               matched?.browser_download_url ??
               matched?.url ??
-              downloadAssetHref(`/downloads/${filename}`);
+              downloadLatestAssetPath(filename);
             return (
               <Card key={key} size="sm" className="flex flex-col">
                 <CardHeader className="flex-1">

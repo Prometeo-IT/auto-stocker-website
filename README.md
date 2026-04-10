@@ -39,10 +39,6 @@ npm run preview
 npm run lint
 ```
 
-## Configuration
-
-Optional environment variables (Vite `VITE_*`) are documented in [`src/config/site.ts`](src/config/site.ts): release download base URL and demo video URL.
-
 ## i18n
 
 Locale JSON lives in [`src/locales/`](src/locales/). See [`../auto-stocker-backend/AGENTS.md`](../auto-stocker-backend/AGENTS.md) for notes on language detection and `?lng=` overrides.
