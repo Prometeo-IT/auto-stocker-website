@@ -14,8 +14,7 @@
   "nav": {
     "preview": "Preview",
     "solutions": "Solutions",
-    "capabilities": "Capabilities",
-    "download": "Download"
+    "features": "Features"
   },
   "hero": {
     "headline": "Reliable stock, faster operations",
@@ -43,28 +42,13 @@
       }
     }
   },
-  "capabilities": {
-    "title": "What you can do",
-    "rolesTitle": "Who it is for",
-    "roles": {
-      "managers": {
-        "title": "Managers & owners",
-        "text": "See what you have, what moved, and where counts diverge—before they become costly mistakes."
-      },
-      "staff": {
-        "title": "Workshop staff",
-        "text": "Count stock, sell parts, and take payment with fewer steps and less back-and-forth."
-      }
-    },
-    "extrasTitle": "Also supported",
-    "extras": {
-      "0": "Preliminary invoices when you need a quote on paper before closing the sale.",
-      "1": "Reinvoicing when totals or details change—without starting from scratch."
-    },
+  "features": {
+    "headline": "Everything in one place",
+    "itemsIntro": "Everyday jobs your team runs",
     "items": {
       "inventories": {
         "title": "Inventories",
-        "text": "Run structured counts and keep history aligned with the floor."
+        "text": "Manage your stock with minimal effort and keep history aligned with the floor."
       },
       "catalog": {
         "title": "Item catalog",
@@ -83,8 +67,19 @@
         "text": "Record sales and payments in one flow."
       },
       "invoices": {
-        "title": "Sales & PDF invoices",
+        "title": "Automated invoices",
         "text": "Generate professional PDF invoices from completed sales."
+      }
+    },
+    "audienceTitle": "For the desk and the floor",
+    "audience": {
+      "managers": {
+        "title": "Owners & managers",
+        "text": "Visualize the stock, spot patterns, and catch problems early."
+      },
+      "staff": {
+        "title": "Workshop staff",
+        "text": "Check stock, sell parts, and take payment with less friction."
       }
     }
   },
@@ -100,11 +95,7 @@
       "windows": "Windows",
       "windowsHint": "Desktop app (.zip)",
       "androidApk": "Android (APK)",
-      "androidApkHint": "Installable package (.apk)",
-      "androidAab": "Android (Play bundle)",
-      "androidAabHint": "Upload to Google Play (.aab)",
-      "checksums": "SHA256 checksums",
-      "checksumsHint": "Verify downloads (SHA256SUMS.txt)"
+      "androidApkHint": "Installable package (.apk)"
     }
   },
   "multiplatform": {
@@ -112,9 +103,6 @@
     "description": "Run Auto Stocker on desktop for daily operations and keep visibility on your phone when you are away from the workshop."
   },
   "screenshots": {
-    "title": "Screenshots",
-    "intro": "Replace placeholders in the marketing build with real app screenshots.",
-    "demoHint": "See the app in action",
     "captions": {
       "inventory": "Manage inventory in seconds.",
       "dashboardPhone": "Review dashboard metrics from your phone."
@@ -126,7 +114,6 @@
   },
   "cta": {
     "get": "Get Auto Stocker",
-    "watchDemo": "Watch demo",
     "install": "Download"
   },
   "legal": {

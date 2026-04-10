@@ -14,8 +14,7 @@
   "nav": {
     "preview": "Vista previa",
     "solutions": "Soluciones",
-    "capabilities": "Funciones",
-    "download": "Descargar"
+    "features": "Características"
   },
   "hero": {
     "headline": "Stock bajo control, operaciones más rápidas",
@@ -43,28 +42,13 @@
       }
     }
   },
-  "capabilities": {
-    "title": "Qué puedes hacer",
-    "rolesTitle": "Para quién es",
-    "roles": {
-      "managers": {
-        "title": "Responsables y titulares",
-        "text": "Ve qué tienes, qué se ha movido y dónde los recuentos se desvían—antes de que cueste dinero."
-      },
-      "staff": {
-        "title": "Personal del taller",
-        "text": "Cuenta stock, vende recambios y cobra con menos pasos y menos idas y venidas."
-      }
-    },
-    "extrasTitle": "También incluye",
-    "extras": {
-      "0": "Facturas proforma cuando necesitas un presupuesto en papel antes de cerrar la venta.",
-      "1": "Refacturación cuando cambian totales o detalles—sin empezar de cero."
-    },
+  "features": {
+    "headline": "Todo en un solo lugar",
+    "itemsIntro": "Las tareas cotidianas de tu equipo",
     "items": {
       "inventories": {
         "title": "Inventarios",
-        "text": "Haz recuentos estructurados y mantén el historial alineado con el taller."
+        "text": "Gestiona el stock con el mínimo esfuerzo y en un historial alineado con el taller."
       },
       "catalog": {
         "title": "Catálogo de artículos",
@@ -72,7 +56,7 @@
       },
       "review": {
         "title": "Revisión y diferencias",
-        "text": "Compara stock esperado y contado y resuelve discrepancias con seguridad."
+        "text": "Compara el stock esperado y el contado. Resuelve discrepancias con seguridad."
       },
       "clients": {
         "title": "Clientes",
@@ -83,8 +67,19 @@
         "text": "Registra ventas y pagos en un solo flujo."
       },
       "invoices": {
-        "title": "Ventas y facturas PDF",
+        "title": "Facturas automatizadas",
         "text": "Genera facturas PDF profesionales a partir de ventas cerradas."
+      }
+    },
+    "audienceTitle": "Para el mostrador y el taller",
+    "audience": {
+      "managers": {
+        "title": "Dueños y responsables",
+        "text": "Visualiza el stock, detecta patrones y ataja problemas a tiempo."
+      },
+      "staff": {
+        "title": "Personal del taller",
+        "text": "Consulta stock, vende recambios y cobra con menos fricción."
       }
     }
   },
@@ -100,11 +95,7 @@
       "windows": "Windows",
       "windowsHint": "App de escritorio (.zip)",
       "androidApk": "Android (APK)",
-      "androidApkHint": "Paquete instalable (.apk)",
-      "androidAab": "Android (bundle Play)",
-      "androidAabHint": "Subida a Google Play (.aab)",
-      "checksums": "Checksums SHA256",
-      "checksumsHint": "Verificar descargas (SHA256SUMS.txt)"
+      "androidApkHint": "Paquete instalable (.apk)"
     }
   },
   "multiplatform": {
@@ -112,9 +103,6 @@
     "description": "Usa Auto Stocker en escritorio para la operativa diaria y mantén visibilidad desde el móvil cuando estés fuera del taller."
   },
   "screenshots": {
-    "title": "Capturas",
-    "intro": "Sustituye las imágenes de ejemplo en el build de marketing por capturas reales de la app.",
-    "demoHint": "Ver la app en acción",
     "captions": {
       "inventory": "Gestiona el inventario en cuestión de segundos.",
       "dashboardPhone": "Revisa métricas desde el móvil."
@@ -126,7 +114,6 @@
   },
   "cta": {
     "get": "Obtener Auto Stocker",
-    "watchDemo": "Ver demo",
     "install": "Descargar"
   },
   "legal": {

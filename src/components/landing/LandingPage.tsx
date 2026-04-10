@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { CapabilitiesSection } from "@/components/landing/CapabilitiesSection";
+import { FeaturesSection } from "@/components/landing/FeaturesSection";
 import { DownloadSection } from "@/components/landing/DownloadSection";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { SolutionsSection } from "@/components/landing/SolutionsSection";
@@ -11,7 +11,7 @@ import { SiteHeader } from "@/components/landing/SiteHeader";
 
 export function LandingPage() {
   const { i18n } = useTranslation();
-  const orderedSections = [HeroSection, ScreenshotsSection, SolutionsSection, CapabilitiesSection, DownloadSection] as const;
+  const orderedSections = [HeroSection, ScreenshotsSection, SolutionsSection, FeaturesSection, DownloadSection] as const;
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;

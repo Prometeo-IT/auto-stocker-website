@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 const NAV_IDS = [
   { id: "preview", key: "nav.preview" },
   { id: "solutions", key: "nav.solutions" },
-  { id: "capabilities", key: "nav.capabilities" },
+  { id: "features", key: "nav.features" },
 ] as const;
 
 const base = import.meta.env.BASE_URL;
