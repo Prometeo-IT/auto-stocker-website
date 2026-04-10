@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Download } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {

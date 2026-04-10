@@ -6,14 +6,14 @@ import {
   downloadAssetHref,
   downloadManifestUrl,
 } from "@/config/site";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/Button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card.tsx";
+} from "@/components/ui/Card.tsx";
 import { cn } from "@/lib/utils";
 
 const DOWNLOAD_ASSET_I18N: Record<

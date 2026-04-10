@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card.tsx";
+} from "@/components/ui/Card.tsx";
 
 const CAPABILITY_KEYS = [
   "inventories",

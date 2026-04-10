@@ -2,21 +2,21 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Download, Globe, Menu } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu.tsx";
+} from "@/components/ui/DropdownMenu.tsx";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet.tsx";
+} from "@/components/ui/Sheet.tsx";
 import { cn } from "@/lib/utils";
 
 const NAV_IDS = [

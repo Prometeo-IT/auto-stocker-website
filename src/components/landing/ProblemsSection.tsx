@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion.tsx";
+} from "@/components/ui/Accordion.tsx";
 
 const PROBLEM_KEYS = ["chaos", "mismatch", "slow"] as const;
 
