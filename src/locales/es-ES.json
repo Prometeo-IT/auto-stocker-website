@@ -86,13 +86,21 @@
   },
   "download": {
     "title": "Descargar Auto Stocker",
-    "intro": "Elige tu plataforma. Cada botón descarga la última build desde GitHub Releases.",
+    "intro": "Elige tu plataforma. Un clic por fila descarga la última versión para esa plataforma (servida desde este sitio).",
     "button": "Descargar",
+    "versionLine": "Última versión: {{tag}}",
+    "loading": "Cargando descargas…",
+    "loadError": "No se pudo cargar la lista de descargas. Comprueba que la API está en ejecución y las credenciales de releases están configuradas.",
+    "empty": "Aún no hay archivos de release disponibles.",
     "platforms": {
       "windows": "Windows",
       "windowsHint": "App de escritorio (.zip)",
-      "android": "Android",
-      "androidHint": "Paquete instalable (.apk)"
+      "androidApk": "Android (APK)",
+      "androidApkHint": "Paquete instalable (.apk)",
+      "androidAab": "Android (bundle Play)",
+      "androidAabHint": "Subida a Google Play (.aab)",
+      "checksums": "Checksums SHA256",
+      "checksumsHint": "Verificar descargas (SHA256SUMS.txt)"
     }
   },
   "multiplatform": {
