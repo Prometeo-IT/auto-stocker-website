@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/Dialog.tsx";
+} from "@/components/ui/Dialog";
 import { cn } from "@/lib/utils";
 
 type LegalDialogLinkProps = {

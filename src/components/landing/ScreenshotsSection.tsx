@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { ScreenshotPreviewDialog } from "@/components/landing/ScreenshotPreviewDialog.tsx";
+import { ScreenshotPreviewDialog } from "@/components/landing/ScreenshotPreviewDialog";
 
 const APP_SCREENSHOTS = [
   { id: "inventory", captionKey: "screenshots.captions.inventory", altKey: "screenshots.alts.inventory" },

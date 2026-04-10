@@ -9,14 +9,14 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/components/ui/DropdownMenu.tsx";
+} from "@/components/ui/DropdownMenu";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/Sheet.tsx";
+} from "@/components/ui/Sheet";
 import { cn } from "@/lib/utils";
 
 const NAV_IDS = [

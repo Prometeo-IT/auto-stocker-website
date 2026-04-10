@@ -13,7 +13,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/Card.tsx";
+} from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 
 const DOWNLOAD_ASSET_I18N: Record<

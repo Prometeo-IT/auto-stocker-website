@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { LegalDialogLink } from "@/components/landing/LegalDialogLink.tsx";
+import { LegalDialogLink } from "@/components/landing/LegalDialogLink";
 
 export function SiteFooter() {
   const { t } = useTranslation();

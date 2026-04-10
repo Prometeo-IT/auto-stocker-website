@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { CapabilitiesSection } from "@/components/landing/CapabilitiesSection.tsx";
-import { DownloadSection } from "@/components/landing/DownloadSection.tsx";
-import { HeroSection } from "@/components/landing/HeroSection.tsx";
-import { ProblemsSection } from "@/components/landing/ProblemsSection.tsx";
-import { ScreenshotsSection } from "@/components/landing/ScreenshotsSection.tsx";
-import { SiteFooter } from "@/components/landing/SiteFooter.tsx";
-import { SiteHeader } from "@/components/landing/SiteHeader.tsx";
+import { CapabilitiesSection } from "@/components/landing/CapabilitiesSection";
+import { DownloadSection } from "@/components/landing/DownloadSection";
+import { HeroSection } from "@/components/landing/HeroSection";
+import { ProblemsSection } from "@/components/landing/ProblemsSection";
+import { ScreenshotsSection } from "@/components/landing/ScreenshotsSection";
+import { SiteFooter } from "@/components/landing/SiteFooter";
+import { SiteHeader } from "@/components/landing/SiteHeader";
 
 export function LandingPage() {
   const { i18n } = useTranslation();

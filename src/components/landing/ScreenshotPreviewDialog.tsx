@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/Dialog.tsx";
+} from "@/components/ui/Dialog";
 
 type ScreenshotPreviewDialogProps = {
   src: string;
