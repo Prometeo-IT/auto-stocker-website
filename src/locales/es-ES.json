@@ -16,7 +16,7 @@
     "problems": "Problemas",
     "capabilities": "Funciones",
     "download": "Descargar",
-    "screenshots": "Capturas"
+    "screenshots": "Vista previa"
   },
   "hero": {
     "headline": "Stock bajo control, operaciones más rápidas",
@@ -97,27 +97,19 @@
   },
   "multiplatform": {
     "title": "Pensado para escritorio y móvil",
-    "description": "Usa Auto Stocker en escritorio para la operativa diaria y mantén visibilidad desde el móvil cuando estés fuera del mostrador."
+    "description": "Usa Auto Stocker en escritorio para la operativa diaria y mantén visibilidad desde el móvil cuando estés fuera del taller."
   },
   "screenshots": {
     "title": "Capturas",
     "intro": "Sustituye las imágenes de ejemplo en el build de marketing por capturas reales de la app.",
     "demoHint": "Ver la app en acción",
     "captions": {
-      "inventory": "Mantén el inventario preciso de un vistazo.",
-      "sales": "Busca y gestiona ventas en menos pasos.",
-      "invoice": "Revisa y emite facturas profesionales rápidamente.",
-      "dashboard": "Sigue el rendimiento del taller en un solo panel.",
-      "dashboardPhone": "Revisa métricas del panel desde el móvil.",
-      "lowStock": "Detecta faltantes antes de frenar el trabajo."
+      "inventory": "Gestiona el inventario en cuestión de segundos.",
+      "dashboardPhone": "Revisa métricas desde el móvil."
     },
     "alts": {
       "inventory": "Pantalla de inventario de Auto Stocker",
-      "sales": "Listado de ventas de Auto Stocker",
-      "invoice": "Detalle de factura de Auto Stocker",
-      "dashboard": "Panel de Auto Stocker",
-      "dashboardPhone": "Panel de Auto Stocker en una pantalla de móvil",
-      "lowStock": "Alertas de stock bajo de Auto Stocker en un teléfono"
+      "dashboardPhone": "Panel de Auto Stocker en una pantalla de móvil"
     }
   },
   "cta": {

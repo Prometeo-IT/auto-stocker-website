@@ -16,7 +16,7 @@
     "problems": "Problems",
     "capabilities": "Capabilities",
     "download": "Download",
-    "screenshots": "Screenshots"
+    "screenshots": "Preview"
   },
   "hero": {
     "headline": "Reliable stock, faster operations",
@@ -97,27 +97,19 @@
   },
   "multiplatform": {
     "title": "Built for desktop and mobile",
-    "description": "Run Auto Stocker on desktop for daily operations and keep visibility on your phone when you are away from the counter."
+    "description": "Run Auto Stocker on desktop for daily operations and keep visibility on your phone when you are away from the workshop."
   },
   "screenshots": {
     "title": "Screenshots",
     "intro": "Replace placeholders in the marketing build with real app screenshots.",
     "demoHint": "See the app in action",
     "captions": {
-      "inventory": "Keep inventory accurate at a glance.",
-      "sales": "Find and manage sales in fewer steps.",
-      "invoice": "Review and issue professional invoices quickly.",
-      "dashboard": "Track workshop performance in one dashboard.",
-      "dashboardPhone": "Review dashboard metrics from your phone.",
-      "lowStock": "Catch low-stock items before they block work."
+      "inventory": "Manage inventory in seconds.",
+      "dashboardPhone": "Review dashboard metrics from your phone."
     },
     "alts": {
       "inventory": "Auto Stocker inventory screen",
-      "sales": "Auto Stocker sales list",
-      "invoice": "Auto Stocker invoice details",
-      "dashboard": "Auto Stocker dashboard view",
-      "dashboardPhone": "Auto Stocker dashboard on a phone screen",
-      "lowStock": "Auto Stocker low stock alerts on a phone"
+      "dashboardPhone": "Auto Stocker dashboard on a phone screen"
     }
   },
   "cta": {

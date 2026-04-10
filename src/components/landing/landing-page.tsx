@@ -48,6 +48,7 @@ import {
 } from "lucide-react";
 
 const NAV_IDS = [
+  { id: "screenshots", key: "nav.screenshots" },
   { id: "problems", key: "nav.problems" },
   { id: "capabilities", key: "nav.capabilities" },
 ] as const;
@@ -90,8 +91,6 @@ const APP_SCREENSHOTS = [
   },
   { id: "low-stock", captionKey: "screenshots.captions.lowStock", altKey: "screenshots.alts.lowStock" },
 ] as const;
-
-const FEATURED_SCREENSHOT_IDS = ["dashboard", "inventory", "sales", "dashboard-phone"] as const;
 
 const base = import.meta.env.BASE_URL;
 
@@ -255,75 +254,88 @@ function HeroSection() {
 
 function ScreenshotsSection() {
   const { t } = useTranslation();
+  const inventoryShot = APP_SCREENSHOTS.find((item) => item.id === "inventory");
+  const phoneShot = APP_SCREENSHOTS.find((item) => item.id === "dashboard-phone");
+
+  if (!inventoryShot || !phoneShot) {
+    return null;
+  }
+
   return (
     <section id="screenshots" className="scroll-mt-20 border-b bg-muted/20 py-14 md:py-18">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="font-heading text-foreground mb-3 text-2xl font-semibold tracking-tight md:text-3xl">
-          {t("screenshots.title")}
+          {t("multiplatform.title")}
         </h2>
         <p className="text-muted-foreground mb-8 max-w-2xl leading-relaxed">{t("multiplatform.description")}</p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURED_SCREENSHOT_IDS.map((screenshotId) => {
-            const screenshot = APP_SCREENSHOTS.find((item) => item.id === screenshotId);
-            if (!screenshot) {
-              return null;
-            }
-            const isPhoneMockup = screenshot.id === "dashboard-phone";
-            const screenshotSrc = isPhoneMockup
-              ? `${base}screenshots/phone/dashboard.png`
-              : `${base}screenshots/desktop/${screenshot.id}.png`;
-            return (
-              <Dialog key={screenshot.id}>
-                <DialogTrigger className="block w-full text-left">
-                  {isPhoneMockup ? (
-                    <div className="mx-auto w-full max-w-[200px]">
-                      <div className="relative rounded-[2rem] border border-border/70 bg-card shadow-sm">
-                        <div
-                          className="pointer-events-none absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-foreground/20"
-                          aria-hidden
-                        />
-                        <img
-                          src={screenshotSrc}
-                          width={1170}
-                          height={1992}
-                          alt={t(screenshot.altKey)}
-                          loading="lazy"
-                          className="mx-auto aspect-[9/18] w-[100%] rounded-[1.5rem] object-contain"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <Card className="overflow-hidden p-0 transition-transform hover:-translate-y-0.5" size="sm">
-                      <img
-                        src={screenshotSrc}
-                        width={1920}
-                        height={1080}
-                        alt={t(screenshot.altKey)}
-                        loading="lazy"
-                        className="aspect-[16/9] w-full object-cover"
-                      />
-                    </Card>
-                  )}
-                  <p className="text-muted-foreground mt-2 text-center text-xs font-medium">
-                    {t(screenshot.captionKey)}
-                  </p>
-                </DialogTrigger>
-                <DialogContent className={cn(isPhoneMockup ? "sm:max-w-md" : "sm:max-w-5xl")}>
-                  <DialogHeader className="sr-only">
-                    <DialogTitle>{t(screenshot.captionKey)}</DialogTitle>
-                    <DialogDescription>{t(screenshot.altKey)}</DialogDescription>
-                  </DialogHeader>
-                  <img
-                    src={screenshotSrc}
-                    width={isPhoneMockup ? 1170 : 1920}
-                    height={isPhoneMockup ? 1992 : 1080}
-                    alt={t(screenshot.altKey)}
-                    className="max-h-[80vh] w-full rounded-md object-contain"
+        <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+          <Dialog>
+            <DialogTrigger className="block w-full text-left">
+              <div className="overflow-hidden rounded-xl ring-1 ring-foreground/10 transition-transform hover:-translate-y-0.5">
+                <img
+                  src={`${base}screenshots/desktop/${inventoryShot.id}.png`}
+                  width={1920}
+                  height={1080}
+                  alt={t(inventoryShot.altKey)}
+                  loading="lazy"
+                  className="aspect-[16/9] w-full object-cover"
+                />
+              </div>
+              <p className="text-muted-foreground mt-2 text-center text-xs font-medium">
+                {t(inventoryShot.captionKey)}
+              </p>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-5xl">
+              <DialogHeader className="sr-only">
+                <DialogTitle>{t(inventoryShot.captionKey)}</DialogTitle>
+                <DialogDescription>{t(inventoryShot.altKey)}</DialogDescription>
+              </DialogHeader>
+              <img
+                src={`${base}screenshots/desktop/${inventoryShot.id}.png`}
+                width={1920}
+                height={1080}
+                alt={t(inventoryShot.altKey)}
+                className="max-h-[80vh] w-full rounded-md object-contain"
+              />
+            </DialogContent>
+          </Dialog>
+
+          <Dialog>
+            <DialogTrigger className="block w-full text-left">
+              <div className="mx-auto w-full max-w-[200px]">
+                <div className="relative rounded-[2rem] border border-border/70 bg-card shadow-sm">
+                  <div
+                    className="pointer-events-none absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-foreground/20"
+                    aria-hidden
                   />
-                </DialogContent>
-              </Dialog>
-            );
-          })}
+                  <img
+                    src={`${base}screenshots/phone/dashboard.png`}
+                    width={1170}
+                    height={1992}
+                    alt={t(phoneShot.altKey)}
+                    loading="lazy"
+                    className="mx-auto aspect-[9/18] w-[100%] rounded-[1.5rem] object-contain"
+                  />
+                </div>
+              </div>
+              <p className="text-muted-foreground mt-2 text-center text-xs font-medium">
+                {t(phoneShot.captionKey)}
+              </p>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader className="sr-only">
+                <DialogTitle>{t(phoneShot.captionKey)}</DialogTitle>
+                <DialogDescription>{t(phoneShot.altKey)}</DialogDescription>
+              </DialogHeader>
+              <img
+                src={`${base}screenshots/phone/dashboard.png`}
+                width={1170}
+                height={1992}
+                alt={t(phoneShot.altKey)}
+                className="max-h-[80vh] w-full rounded-md object-contain"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
@@ -416,7 +428,7 @@ function CapabilitiesSection() {
 function DownloadSection() {
   const { t } = useTranslation();
   return (
-    <section id="download" className="scroll-mt-20 bg-muted/20 py-16 md:py-20">
+    <section id="download" className="scroll-mt-20 border-t bg-muted/20 py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("download.title")}
