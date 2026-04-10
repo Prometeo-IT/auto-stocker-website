@@ -49,11 +49,9 @@ import {
 } from "lucide-react";
 
 const NAV_IDS = [
-  { id: "positioning", key: "nav.positioning" },
   { id: "problems", key: "nav.problems" },
   { id: "capabilities", key: "nav.capabilities" },
   { id: "screenshots", key: "nav.screenshots" },
-  { id: "download", key: "nav.download" },
 ] as const;
 
 const PROBLEM_KEYS = ["chaos", "mismatch", "slow"] as const;
@@ -206,7 +204,7 @@ function SiteHeader() {
                 <SheetTitle className="text-left">{t("site.name")}</SheetTitle>
               </SheetHeader>
               <NavLinks
-                className="gap-3 px-4 pb-4"
+                className="!flex-col !items-start gap-3 px-4 pb-4 text-left"
                 onNavigate={() => setMenuOpen(false)}
               />
             </SheetContent>
