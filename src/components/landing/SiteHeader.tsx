@@ -98,8 +98,8 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="bg-background/80 supports-backdrop-filter:backdrop-blur-md sticky top-0 z-40 border-b">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4">
-        <a href="#hero" className="flex items-center gap-2">
+      <div className="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
+        <a href="#hero" className="flex shrink-0 items-center gap-2">
           <img
             src={`${base}autostocker-logo.svg`}
             width={36}
@@ -110,13 +110,9 @@ export function SiteHeader() {
           <span className="font-heading text-foreground text-sm font-semibold">{t("site.name")}</span>
         </a>
 
-        <div className="hidden md:flex md:items-center md:gap-3">
-          <NavLinks className="flex-row gap-5" />
+        <div className="ml-auto flex min-w-0 shrink-0 items-center gap-4 md:gap-5">
+          <NavLinks className="hidden md:flex md:flex-row md:items-center md:gap-5" />
           <LanguageMenu />
-        </div>
-
-        <div className="flex items-center gap-2">
-          <LanguageMenu className="md:hidden" />
           <a href="#download" className={cn(buttonVariants({ size: "sm" }), "inline-flex shrink-0")}>
             <Download />
             {t("cta.install")}
