@@ -20,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const NAV_IDS = [
-  { id: "screenshots", key: "nav.screenshots" },
+  { id: "preview", key: "nav.preview" },
   { id: "solutions", key: "nav.solutions" },
   { id: "capabilities", key: "nav.capabilities" },
 ] as const;
@@ -99,7 +99,7 @@ export function SiteHeader() {
   return (
     <header className="bg-background/80 supports-backdrop-filter:backdrop-blur-md sticky top-0 z-40 border-b">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4">
-        <a href="#positioning" className="flex items-center gap-2">
+        <a href="#hero" className="flex items-center gap-2">
           <img
             src={`${base}autostocker-logo.svg`}
             width={36}

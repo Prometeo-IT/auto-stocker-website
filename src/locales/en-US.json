@@ -12,11 +12,10 @@
     "switchTo": "Language"
   },
   "nav": {
-    "positioning": "Product",
+    "preview": "Preview",
     "solutions": "Solutions",
     "capabilities": "Capabilities",
-    "download": "Download",
-    "screenshots": "Preview"
+    "download": "Download"
   },
   "hero": {
     "headline": "Reliable stock, faster operations",

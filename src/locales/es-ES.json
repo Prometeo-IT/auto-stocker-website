@@ -12,11 +12,10 @@
     "switchTo": "Idioma"
   },
   "nav": {
-    "positioning": "Producto",
+    "preview": "Vista previa",
     "solutions": "Soluciones",
     "capabilities": "Funciones",
-    "download": "Descargar",
-    "screenshots": "Vista previa"
+    "download": "Descargar"
   },
   "hero": {
     "headline": "Stock bajo control, operaciones más rápidas",

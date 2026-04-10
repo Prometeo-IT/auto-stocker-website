@@ -8,7 +8,7 @@ export function HeroSection() {
   const { t } = useTranslation();
   return (
     <section
-      id="positioning"
+      id="hero"
       className="scroll-mt-20 border-b bg-gradient-to-b from-muted/40 to-background py-16 md:py-24"
     >
       <div className="mx-auto max-w-5xl px-4">

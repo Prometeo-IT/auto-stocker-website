@@ -20,7 +20,7 @@ export function ScreenshotsSection() {
 
   return (
     <section
-      id="screenshots"
+      id="preview"
       className="scroll-mt-20 border-b bg-gradient-to-b from-muted/40 to-background py-14 md:py-18"
     >
       <div className="mx-auto max-w-5xl px-4">
