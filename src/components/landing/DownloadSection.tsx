@@ -88,6 +88,7 @@ export function DownloadSection() {
 
   const assets = manifest?.assets ?? manifest?.files ?? [];
   const releaseTag = manifest?.tag_name ?? manifest?.tag;
+  const manifestResolved = !loading && !loadError && manifest != null;
 
   return (
     <section
@@ -98,10 +99,10 @@ export function DownloadSection() {
         <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold tracking-tight md:text-3xl">
           {t("download.title")}
         </h2>
-        {releaseTag ? (
-          <p className="text-muted-foreground mb-1 text-sm">{t("download.versionLine", { tag: releaseTag })}</p>
-        ) : null}
         <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">{t("download.intro")}</p>
+        {releaseTag ? (
+          <p className="text-muted-foreground mb-4 text-sm">{t("download.versionLine", { tag: releaseTag })}</p>
+        ) : null}
         {loading ? <p className="text-muted-foreground mb-4 text-sm">{t("download.loading")}</p> : null}
         {loadError ? <p className="mb-4 text-sm text-red-600">{t("download.loadError")}</p> : null}
         <div className="grid gap-4 sm:grid-cols-2">
@@ -116,6 +117,8 @@ export function DownloadSection() {
               matched?.browser_download_url ??
               matched?.url ??
               downloadLatestAssetPath(filename);
+            const hasReleaseFile = matched != null;
+            const linkActive = !manifestResolved || hasReleaseFile;
             return (
               <Card key={key} size="sm" className="flex flex-col">
                 <CardHeader className="flex-1">
@@ -126,14 +129,29 @@ export function DownloadSection() {
                   <CardDescription>{t(i18nKeys.hintKey)}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <a
-                    href={href}
-                    download={filename}
-                    className={cn(buttonVariants({ size: "default" }), "inline-flex w-full justify-center sm:w-auto")}
-                  >
-                    <Download />
-                    {t("download.button")}
-                  </a>
+                  {linkActive ? (
+                    <a
+                      href={href}
+                      className={cn(
+                        buttonVariants({ size: "default" }),
+                        "inline-flex w-full justify-center sm:w-auto",
+                      )}
+                    >
+                      <Download />
+                      {t("download.button")}
+                    </a>
+                  ) : (
+                    <span
+                      className={cn(
+                        buttonVariants({ size: "default" }),
+                        "inline-flex w-full cursor-not-allowed justify-center opacity-60 sm:w-auto",
+                      )}
+                      aria-disabled="true"
+                    >
+                      <Download />
+                      {t("download.unavailableInRelease")}
+                    </span>
+                  )}
                 </CardContent>
               </Card>
             );

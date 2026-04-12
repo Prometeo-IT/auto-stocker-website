@@ -87,6 +87,7 @@
     "title": "Descargar Auto Stocker",
     "intro": "Disponible para Windows y Android.",
     "button": "Descargar",
+    "unavailableInRelease": "No incluido en esta versión",
     "versionLine": "Última versión: {{tag}}",
     "loading": "Cargando descargas…",
     "loadError": "No se pudo cargar la lista de descargas. Comprueba que la API está en ejecución y las credenciales de releases están configuradas.",
