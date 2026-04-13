@@ -50,18 +50,18 @@ jobs:
 
       - name: Package dist artifacts
         run: |
-          tar -czf "dist-${GITHUB_REF_NAME}.tar.gz" dist
-          zip -r "dist-${GITHUB_REF_NAME}.zip" dist
+          tar -czf "auto-stocker-website-${GITHUB_REF_NAME}.tar.gz" dist
+          zip -r "auto-stocker-website-${GITHUB_REF_NAME}.zip" dist
 
       - name: Generate checksums
         run: |
           set -euo pipefail
-          sha256sum dist-${GITHUB_REF_NAME}.* > SHA256SUMS.txt
+          sha256sum auto-stocker-website-${GITHUB_REF_NAME}.* > SHA256SUMS.txt
 
       - name: Create GitHub release and upload assets
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist-${{ github.ref_name }}.tar.gz
-            dist-${{ github.ref_name }}.zip
+            auto-stocker-website-${{ github.ref_name }}.tar.gz
+            auto-stocker-website-${{ github.ref_name }}.zip
             SHA256SUMS.txt
