@@ -115,7 +115,8 @@
   },
   "cta": {
     "get": "Get Auto Stocker",
-    "install": "Download"
+    "install": "Download",
+    "tryOnline": "Try online"
   },
   "legal": {
     "privacyTitle": "Privacy",

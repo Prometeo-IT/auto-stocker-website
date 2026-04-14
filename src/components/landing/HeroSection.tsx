@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Download } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,13 @@ export function HeroSection() {
           <a href="#download" className={cn(buttonVariants({ size: "lg" }), "inline-flex font-bold")}>
             <Download strokeWidth={2.5} />
             {t("cta.get")}
+          </a>
+          <a
+            href="/app"
+            className={cn(buttonVariants({ size: "lg", variant: "outline" }), "inline-flex font-bold")}
+          >
+            <ExternalLink strokeWidth={2.5} />
+            {t("cta.tryOnline")}
           </a>
         </div>
       </div>
