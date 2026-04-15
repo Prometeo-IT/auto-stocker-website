@@ -8,8 +8,9 @@ export function SiteFooter() {
   return (
     <footer className="border-t bg-muted/40 py-10">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 sm:flex-row">
-        <p className="text-muted-foreground text-sm">
-          © {year} {t("footer.copyrightHolder")}. {t("footer.rights")}
+        <p className="text-muted-foreground text-center text-sm sm:text-left">
+          © {year} {t("footer.copyrightHolder")}.
+          <span className="max-[360px]:block"> {t("footer.rights")}</span>
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <LegalDialogLink
